@@ -16,7 +16,7 @@ public class Login {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ws-factory", "root", "");
             Statement stmt = conn.createStatement();
-            String query = "select * from users where username = " + username + "and password = " + password;
+            String query = String.format("select * from users where username ='%s' and password = '%s'", username, password);
             ResultSet res = stmt.executeQuery(query);
 
             if (res.next()) {

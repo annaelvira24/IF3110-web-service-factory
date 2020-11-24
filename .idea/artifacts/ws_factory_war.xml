@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="web_service_bank_pro.war">
+    <root id="archive" name="web_service_factory.war">
       <element id="artifact" artifact-name="ws-factory:war exploded" />
     </root>
   </artifact>

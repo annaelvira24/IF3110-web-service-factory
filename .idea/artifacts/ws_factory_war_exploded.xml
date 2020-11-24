@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="ws-factory:war exploded">
-    <output-path>$PROJECT_DIR$/target/web_service_bank_pro</output-path>
+    <output-path>$PROJECT_DIR$/target/web_service_factory</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -49,6 +49,8 @@
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
           <element id="library" level="project" name="Maven: org.glassfish.external:management-api:3.2.2" />
           <element id="library" level="project" name="Maven: org.mariadb.jdbc:mariadb-java-client:2.5.1" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.21" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
           <element id="library" level="project" name="Maven: org.jvnet.mimepull:mimepull:1.9.12" />
           <element id="library" level="project" name="Maven: com.sun.xml.ws:policy:2.7.7" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:txw2:2.3.2" />
@@ -63,7 +65,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/web_service_bank_pro/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/web_service_factory/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="ws-factory/web/Web" />
     </root>
