@@ -7,6 +7,32 @@
         implementation='services.Login'
         url-pattern='/services/Login'/>
 
+    <endpoint
+            name='Web Services Factory - GetOrder'
+            implementation='services.GetOrder'
+            url-pattern='/services/GetOrder'/>
+
+    <endpoint
+            name='Web Services Factory - GetProduct'
+            implementation='services.GetProduct'
+            url-pattern='/services/GetProduct'/>
+
+
+    <endpoint
+            name='Web Services Factory - GetIngredient'
+            implementation='services.GetIngredient'
+            url-pattern='/services/GetIngredient'/>
+
+    <endpoint
+            name='Web Services Factory - GetRecipe'
+            implementation='services.GetRecipe'
+            url-pattern='/services/GetRecipe'/>
+
+    <endpoint
+            name='Web Services Factory - GetBalance'
+            implementation='services.GetBalance'
+            url-pattern='/services/GetBalance'/>
+
 </endpoints>
 
 
