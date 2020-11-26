@@ -33,6 +33,11 @@
             implementation='services.GetBalance'
             url-pattern='/services/GetBalance'/>
 
+    <endpoint
+            name='Web Services Factory - AddBalance'
+            implementation='services.AddBalance'
+            url-pattern='/services/AddBalance'/>
+
 </endpoints>
 
 
