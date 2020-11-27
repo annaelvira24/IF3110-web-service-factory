@@ -44,9 +44,24 @@
             url-pattern='/services/AddProduct'/>
 
     <endpoint
+            name='Web Services Factory - AddRecipe'
+            implementation='services.AddRecipe'
+            url-pattern='/services/AddRecipe'/>
+
+    <endpoint
             name='Web Services Factory - ReqAddStock'
             implementation='services.ReqAddStock'
             url-pattern='/services/ReqAddStock'/>
+
+    <endpoint
+            name='Web Services Factory - GiveApproval'
+            implementation='services.GiveApproval'
+            url-pattern='/services/GiveApproval'/>
+
+    <endpoint
+            name='Web Services Factory - GetApprovalStatus'
+            implementation='services.GetApprovalStatus'
+            url-pattern='/services/GetApprovalStatus'/>
 
 </endpoints>
 
