@@ -38,6 +38,16 @@
             implementation='services.AddBalance'
             url-pattern='/services/AddBalance'/>
 
+    <endpoint
+            name='Web Services Factory - AddProduct'
+            implementation='services.AddProduct'
+            url-pattern='/services/AddProduct'/>
+
+    <endpoint
+            name='Web Services Factory - ReqAddStock'
+            implementation='services.ReqAddStock'
+            url-pattern='/services/ReqAddStock'/>
+
 </endpoints>
 
 
