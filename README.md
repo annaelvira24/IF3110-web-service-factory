@@ -1,67 +1,26 @@
-<h1 align="center">
-    <b>
-        <br>
-        # Tugas Besar 2 IF3110 Pengembangan Aplikasi Berbasis Web
-        <br>
-    </b>
-</h1>
+# Tugas Besar 2 IF3110 Pembelajaran Aplikasi Berbasis Web
+# WS-Factory
 
-<h2 align="center">
-    <b>
-        <br>
-        Web Service Bank Pro
-        <br>
-        <br>
-    </b>
-</h2>
+## Deskripsi Web Service
+Web Service Factory diimplementasikan di atas Node.js dengan mengimplementasikan Java Servlet menggunakan JAX-WS dengan protokol SOAP. Web service ini digunakan untuk Willy Wangky's Factory dan Willy Wangky’s Web.
 
-## Deskripsi Singkat
-Web service Bank diimplementasikan di atas ​java servlet menggunakan JAX-WS dengan ​protokol SOAP​. ​Web service ini digunakan oleh Aplikasi Bank Pro dan Aplikasi Engima.
+Layanan yang disediakan:
+1. Menambahkan jenis coklat baru beserta resep (kebutuhan bahan) dan harganya.
+2. Menambahkan permintaan add stock baru.
+3. Mengembalikan status dari permintaan add stock.
+4. Melakukan pembuatan coklat tertentu dengan jumlah tertentu, yaitu mengubah bahan tidak kedaluwarsa dalam stok gudang Factory menjadi coklat (yang masih berada dalam gudang Factory) dan mengurangi bahan dalam gudang apabila bahan cukup.
+5. Mengubah status permintaan add stock, dalam artian melakukan pengiriman terhadap toko Willy Wangky.
+6. Menambah saldo pada Factory.
+7. Mengembalikan saldo yang dimiliki pada Factory.
+8. Menambahkan bahan dalam gudang.
 
-Layanan yang disediakan oleh ​web service ​ini adalah:
-1. Validasi nomor rekening. Jika nomor rekening terdaftar di basis data, maka nomor tersebut valid.
-
-2. Memberikan data rekening seorang nasabah. Data pengguna meliputi nama pengguna, nomor kartu, saldo terakhir, dan riwayat transaksi (debit dan kredit).
-
-3. Melakukan transaksi transfer dengan input nomor rekening pengirim, nomor rekening/akun virtual penerima, dan jumlah uang yang ditransfer. Layanan mengembalikan status transfer (berhasil/gagal).
-<br>
-Transfer dikatakan berhasil jika:
-    * Nomor rekening atau akun virtual tujuan valid
-    * Saldo rekening mencukupi untuk transaksi Jika transfer berhasil, akan dicatat transaksi debit pada rekening pengirim dan transaksi kredit pada rekening penerima.
-
-4. Melakukan penambahan saldo rekening dengan input jumlah uang yang ingin dimasukan ke rekening.
-
-5. Membuat akun virtual untuk suatu nomor rekening. Layanan mengembalikan nomor unik akun virtual tersebut.
-
-6. Mengecek ada atau tidak sebuah transaksi kredit dalam suatu rentang waktu. Input yang diterima adalah nomor rekening atau akun virtual tujuan, jumlah nominal yang diharapkan, dan ​jangka waktu (dalam menit) rentang waktu (start datetime, end datetime)​.
-
-<br>
-
-## Basis Data Web Service
-![](screenshots/database_diagram.png)
-
-| Nomor | Relasi           | Penjelasan                                                                       |
-|:-----:|:-----------------|:---------------------------------------------------------------------------------|
-| 1     | customers        | Relasi yang berisi data nasabah (terdiri dari nomor akun nasabah, nama nasabah dan jumlah saldo nasabah) |
-| 2     | transactions     | Relasi yang berisi data transaksi nasabah (terdiri dari id transaksi, nomor akun nasabah, tipe transaksi, besar transaksi, nomor akun tujuan transaksi (dapat berupa nomor akun atau nomor akun virtual) dan waktu transaksi dilakukan) |
-| 3     | virtual_accounts | Relasi yang berisi data akun virtual nasabah (terdiri dari nomor akun nasabah dan nomor akun virtual nasabah) |
-
-<p align="center">
-    <b>
-        <br>
-        <font size="6">
-            About
-        </font>
-    </b>
-</p>
-
-<p align="center">
-    <b>
-        IF3110-Pengembangan Aplikasi Berbasis Web - 2019
-        <br>
-        Teknik Informatika 2017
-        <br>
-        <br>
-        13517137 - Vincent Budianto
-    </b>
-</p>
+## Basis data
+| Nomor | Relasi             | Penjelasan                                                                                                                                                             |
+|-------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1     | addstock           | Relasi ini berisi data permintaan add stock yang terdiri atas ID permintaan add stock, ID produk coklat, jumlah yang diminta, dan status permintaan(Pending/Delivered) |
+| 2     | balance            | Relasi ini berisi data saldo factory.                                                                                                                                  |
+| 3     | ingredient         | Relasi ini berisi data bahan yang dimiliki factory yang terdiri atas ID dan nama bahan.                                                                                |
+| 4     | ingredient_details | Relasi ini berisi informasi lebih jauh dari bahan yang dimiliki factory yang terdiri atas ID bahan, tanggal kadaluwarsa, dan stoknya.                                  |
+| 5     | product            | Relasi ini berisi data produk coklat yang dimiliki yang terdiri atas ID coklat, nama coklat, dan stoknya.                                                              |
+| 6     | recipe             | Relasi ini berisi data resep coklat yang terdiri atas ID coklat, ID bahan yang diperlukan untuk pembuatan, dan banyaknya bahan yang dibutuhkan.                        |
+| 7     | users              | Relasi ini berisi data akun pengguna yang terdiri atas ID user, username, dan password.                                                                                |
