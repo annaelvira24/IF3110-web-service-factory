@@ -4,10 +4,8 @@ import java.sql.*;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlElement;
-//import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.Date;
 
 @WebService()
 public class AddSupply {
@@ -19,9 +17,12 @@ public class AddSupply {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ws-factory", "root", "");
             conn.setAutoCommit(true);
 
-            java.util.Date today = new Date();
+            Calendar cal = Calendar.getInstance();
+            java.util.Date today = cal.getTime();
+            cal.add(Calendar.YEAR, 1);
+            java.util.Date nextYear = cal.getTime();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            String stringDate = dateFormat.format(today);
+            String stringDate = dateFormat.format(nextYear);
             java.sql.Date sqlDate =  java.sql.Date.valueOf(stringDate);
 
             String query;
@@ -51,16 +52,8 @@ public class AddSupply {
             }
 
         } catch (SQLException e) {
-//            StringWriter errors = new StringWriter();
-//            e.printStackTrace(new PrintWriter(errors));
-//            String result = errors.toString();
-//            return result;
             return "500";
         } catch (Exception e) {
-//            StringWriter errors = new StringWriter();
-//            e.printStackTrace(new PrintWriter(errors));
-//            String result = errors.toString();
-//            return result;
             return "400";
         } finally {
             String result = "200";
