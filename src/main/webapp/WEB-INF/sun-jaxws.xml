@@ -73,6 +73,11 @@
             implementation='services.GetApprovalStatus'
             url-pattern='/services/GetApprovalStatus'/>
 
+    <endpoint
+            name='Web Services Factory - Produce'
+            implementation='services.Produce'
+            url-pattern='/services/Produce'/>
+
 </endpoints>
 
 

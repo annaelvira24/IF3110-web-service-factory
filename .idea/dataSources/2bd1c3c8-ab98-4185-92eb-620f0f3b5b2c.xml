@@ -988,7 +988,7 @@ APPLICATION_PASSWORD_ADMIN,AUDIT_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTI
     </foreign-key>
     <column id="311" parent="298" name="balance_amount">
       <Position>1</Position>
-      <DataType>decimal(20,2 digit)|0s</DataType>
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <key id="312" parent="298" name="PRIMARY">
@@ -1023,7 +1023,7 @@ APPLICATION_PASSWORD_ADMIN,AUDIT_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTI
     </column>
     <column id="318" parent="300" name="stock">
       <Position>3</Position>
-      <DataType>decimal(10,1 digit)|0s</DataType>
+      <DataType>int|0s</DataType>
     </column>
     <key id="319" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -1067,7 +1067,7 @@ expiry_date</ColNames>
     </column>
     <column id="327" parent="302" name="amount_need">
       <Position>3</Position>
-      <DataType>decimal(8,1 digit)|0s</DataType>
+      <DataType>int|0s</DataType>
     </column>
     <index id="328" parent="302" name="id_ingredient">
       <ColNames>id_ingredient</ColNames>
