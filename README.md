@@ -15,8 +15,10 @@ Layanan yang disediakan:
 8. Menambahkan bahan dalam gudang.
 
 ## Basis data
-### Halaman Login
 ![](screenshot/database.png)
+<br/>
+### Tabel
+
 | Nomor | Relasi             | Penjelasan                                                                                                                                                             |
 |-------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1     | addstock           | Relasi ini berisi data permintaan add stock yang terdiri atas ID permintaan add stock, ID produk coklat, jumlah yang diminta, dan status permintaan(Pending/Delivered) |
