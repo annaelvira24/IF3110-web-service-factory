@@ -15,6 +15,8 @@ Layanan yang disediakan:
 8. Menambahkan bahan dalam gudang.
 
 ## Basis data
+### Halaman Login
+![](screenshot/database.png)
 | Nomor | Relasi             | Penjelasan                                                                                                                                                             |
 |-------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1     | addstock           | Relasi ini berisi data permintaan add stock yang terdiri atas ID permintaan add stock, ID produk coklat, jumlah yang diminta, dan status permintaan(Pending/Delivered) |
@@ -23,4 +25,6 @@ Layanan yang disediakan:
 | 4     | ingredient_details | Relasi ini berisi informasi lebih jauh dari bahan yang dimiliki factory yang terdiri atas ID bahan, tanggal kadaluwarsa, dan stoknya.                                  |
 | 5     | product            | Relasi ini berisi data produk coklat yang dimiliki yang terdiri atas ID coklat, nama coklat, dan stoknya.                                                              |
 | 6     | recipe             | Relasi ini berisi data resep coklat yang terdiri atas ID coklat, ID bahan yang diperlukan untuk pembuatan, dan banyaknya bahan yang dibutuhkan.                        |
-| 7     | users              | Relasi ini berisi data akun pengguna yang terdiri atas ID user, username, dan password.                                                                                |
+| 7     | users              | Relasi ini berisi data akun pengguna yang terdiri atas ID user, username, dan password.
+
+                                                                          |
