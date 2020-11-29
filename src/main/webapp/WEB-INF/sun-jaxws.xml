@@ -39,6 +39,16 @@
             url-pattern='/services/AddBalance'/>
 
     <endpoint
+            name='Web Services Factory - AddSupply'
+            implementation='services.AddSupply'
+            url-pattern='/services/AddSupply'/>
+
+    <endpoint
+            name='Web Services Factory - ReduceBalance'
+            implementation='services.ReduceBalance'
+            url-pattern='/services/ReduceBalance'/>
+
+    <endpoint
             name='Web Services Factory - AddProduct'
             implementation='services.AddProduct'
             url-pattern='/services/AddProduct'/>
