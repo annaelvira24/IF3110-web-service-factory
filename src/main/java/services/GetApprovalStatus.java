@@ -5,25 +5,31 @@ import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlElement;
 
 @WebService()
-public class AddBalance {
+public class GetApprovalStatus {
     @WebMethod
-    public String AddBalance(@XmlElement (name = "add") String add) {
+    public String GetApprovalStatus(@XmlElement (name = "addStockId") String addStockId) {
+        String result = "";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ws-factory", "root", "");
             Statement stmt = conn.createStatement();
-            String query = String.format("update balance set balance_amount = balance_amount + %s", add);
-            stmt.executeUpdate(query);
+            String query = String.format("select status from addStock where id_addstock = %s", addStockId);
+            ResultSet res = stmt.executeQuery(query);
 
+            if (res.next()) {
+                result = (res.getString("status"));
+            } else {
+                result = "300";
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return "500";
+            result = "500";
         } catch (Exception e) {
             e.printStackTrace();
-            return "400";
+            result =  "400";
         } finally {
-            return "200";
+            return result;
         }
     }
 }
